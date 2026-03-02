@@ -100,19 +100,21 @@ export default function Home() {
             />
 
             <ProjectCard
-              title="Project Name 2"
-              description="Brief description of your second project. Highlight the key technologies and impact."
-              tags={["React", "TypeScript", "Node.js"]}
+              title="Key Actor Detection in Multi-Person Sports Videos"
+              description="Research project published at CVsports Workshop, CVPR'22. Developed a convolutional recurrent neural network with attention mechanism to identify key players in hockey penalty videos without explicit annotations."
+              image="/images/projects/hockey_penalty_actor_det.png"
+              tags={["Computer Vision", "Deep Learning", "LSTM", "PyTorch", "CVPR"]}
               isExternal={true}
-              link="https://github.com/yourusername/project2"
+              link="https://github.com/fay-askari72/Interaction-Classification-with-Key-Actor-Detection-in-Videos"
             />
 
             <ProjectCard
-              title="Project Name 3"
-              description="Brief description of your third project. Mention any interesting challenges or solutions."
-              tags={["Python", "Data Science", "API"]}
+              title="AI-Enabled Object Detection in UAVs"
+              description="Research paper published in IEEE Networks. Developed an optimized deep learning architecture using ResNeSt backbone for aerial object detection, offloading computationally intensive tasks from power-constrained drones to GPU edge servers."
+              image="/images/projects/aerial_obj_det.png"
+              tags={["Computer Vision", "Object Detection", "UAVs", "Deep Learning", "IEEE"]}
               isExternal={true}
-              link="https://github.com/yourusername/project3"
+              link="https://github.com/ayushjain1144/Aerial-Object-Detection"
             />
           </div>
         </div>
