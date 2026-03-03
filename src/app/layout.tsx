@@ -4,9 +4,9 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Rohit Ramaprasad - Software Engineer & Data Scientist",
-  description: "Personal website of Rohit Ramaprasad - showcasing projects, blog posts, and deep dives into machine learning and software engineering.",
-  keywords: ["software engineer", "data scientist", "machine learning", "portfolio", "blog"],
+  title: "Rohit Ramaprasad - Machine Learning Engineer",
+  description: "Personal website of Rohit Ramaprasad - showcasing projects, blog posts, and deep dives",
+  keywords: ["machine learning engineer", "machine learning", "portfolio", "blog"],
 };
 
 export default function RootLayout({
