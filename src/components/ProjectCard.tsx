@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 
 interface ProjectCardProps {
@@ -7,11 +8,23 @@ interface ProjectCardProps {
   link?: string;
   tags?: string[];
   isExternal?: boolean;
+  thumbnail?: string;
 }
 
-export default function ProjectCard({ title, description, link, tags = [], isExternal = false }: ProjectCardProps) {
+export default function ProjectCard({ title, description, link, tags = [], isExternal = false, thumbnail }: ProjectCardProps) {
   const CardContent = () => (
     <>
+      {thumbnail && (
+        <div className="relative w-[calc(100%+3rem)] -ml-6 h-32 md:h-36 mb-4 -mt-6 rounded-t-lg overflow-hidden bg-gray-100 dark:bg-gray-700">
+          <Image
+            src={thumbnail}
+            alt={title}
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          />
+        </div>
+      )}
       <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
         {title}
       </h3>
@@ -43,7 +56,7 @@ export default function ProjectCard({ title, description, link, tags = [], isExt
 
   if (!link) {
     return (
-      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow overflow-hidden">
         <CardContent />
       </div>
     );
@@ -55,7 +68,7 @@ export default function ProjectCard({ title, description, link, tags = [], isExt
         href={link}
         target="_blank"
         rel="noopener noreferrer"
-        className="block bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow"
+        className="block bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow overflow-hidden"
       >
         <CardContent />
       </a>
@@ -65,7 +78,7 @@ export default function ProjectCard({ title, description, link, tags = [], isExt
   return (
     <Link
       href={link}
-      className="block bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow"
+      className="block bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow overflow-hidden"
     >
       <CardContent />
     </Link>

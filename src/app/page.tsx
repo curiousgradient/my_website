@@ -92,17 +92,18 @@ export default function Home() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <ProjectCard
-              title="Kaggle Competition: Model Fine-tuning"
-              description="Fine-tuned a state-of-the-art model for [competition name], achieving top X% ranking. Implemented advanced techniques including data augmentation and ensemble methods."
-              tags={["Machine Learning", "PyTorch", "Kaggle"]}
+              title="Teaching Gemma to Think"
+              description="Google Tunix Hackathon: Attempted to teach Gemma3-1B structured reasoning across creative writing, math, and science using a two-stage SFT + GRPO pipeline. Built a custom 2,282-sample distilled dataset from Gemini-2.5-Pro and trained on Kaggle's constrained TPU."
+              thumbnail="/images/projects/teaching_gemma_to_think.png"
+              tags={["LLMs", "SFT", "GRPO", "Reasoning", "Gemma", "Google Hackathon"]}
               isExternal={true}
-              link="https://kaggle.com/competitions/your-competition"
+              link="https://github.com/curiousgradient/teaching-gemma-to-think"
             />
 
             <ProjectCard
               title="Key Actor Detection in Multi-Person Sports Videos"
               description="Research project published at CVsports Workshop, CVPR'22. Developed a convolutional recurrent neural network with attention mechanism to identify key players in hockey penalty videos without explicit annotations."
-              image="/images/projects/hockey_penalty_actor_det.png"
+              thumbnail="/images/projects/hockey_penalty_det.png"
               tags={["Computer Vision", "Deep Learning", "LSTM", "PyTorch", "CVPR"]}
               isExternal={true}
               link="https://github.com/fay-askari72/Interaction-Classification-with-Key-Actor-Detection-in-Videos"
@@ -111,7 +112,7 @@ export default function Home() {
             <ProjectCard
               title="AI-Enabled Object Detection in UAVs"
               description="Research paper published in IEEE Networks. Developed an optimized deep learning architecture using ResNeSt backbone for aerial object detection, offloading computationally intensive tasks from power-constrained drones to GPU edge servers."
-              image="/images/projects/aerial_obj_det.png"
+              thumbnail="/images/projects/aerial_object_det.png"
               tags={["Computer Vision", "Object Detection", "UAVs", "Deep Learning", "IEEE"]}
               isExternal={true}
               link="https://github.com/ayushjain1144/Aerial-Object-Detection"
