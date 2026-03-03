@@ -30,8 +30,20 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Setup Pages
+        id: setup_pages
+        uses: actions/configure-pages@v5
+
       - name: Build with Next.js
         run: npm run build
+        env:
+          PAGES_BASE_PATH: ${{ steps.setup_pages.outputs.base_path }}
+
+      - name: Verify output
+        run: |
+          echo "Contents of out directory:"
+          ls -la out/
+          test -f out/index.html || (echo "ERROR: index.html not found!" && exit 1)
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
