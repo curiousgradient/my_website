@@ -56,7 +56,7 @@ export default function ProjectCard({ title, description, link, tags = [], isExt
 
   if (!link) {
     return (
-      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow overflow-hidden">
+      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 hover:shadow-lg hover:-translate-y-1 hover:shadow-xl transition-all duration-300 overflow-hidden">
         <CardContent />
       </div>
     );
@@ -68,7 +68,7 @@ export default function ProjectCard({ title, description, link, tags = [], isExt
         href={link}
         target="_blank"
         rel="noopener noreferrer"
-        className="block bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow overflow-hidden"
+        className="block bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 hover:shadow-lg hover:-translate-y-1 hover:shadow-xl transition-all duration-300 overflow-hidden"
       >
         <CardContent />
       </a>
@@ -78,7 +78,7 @@ export default function ProjectCard({ title, description, link, tags = [], isExt
   return (
     <Link
       href={link}
-      className="block bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow overflow-hidden"
+      className="block bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 hover:shadow-lg hover:-translate-y-1 hover:shadow-xl transition-all duration-300 overflow-hidden"
     >
       <CardContent />
     </Link>

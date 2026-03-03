@@ -40,7 +40,7 @@ export default function Footer() {
             </a>
 
             <a
-              href="https://medium.com/@yourusername"
+              href="https://medium.com/@r.rohit5557"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"

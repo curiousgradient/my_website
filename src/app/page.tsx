@@ -1,17 +1,19 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import ProjectCard from '@/components/ProjectCard';
+import FadeInSection from '@/components/FadeInSection';
+import LogoStrip from '@/components/LogoStrip';
 import { assetPath } from '@/lib/basePath';
 
 export default function Home() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen dot-grid">
       {/* Hero Section */}
-      <section className="bg-gradient-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-800 py-20">
+      <section className="relative bg-gradient-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-800 py-20 gradient-mesh overflow-hidden">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeInSection>
           <div className="flex flex-col md:flex-row items-center gap-12">
-            {/* Profile Image */}
-            <div className="flex-shrink-0">
+            {/* Profile Image + Logos */}
+            <div className="flex-shrink-0 flex flex-col items-center gap-6">
               <div className="w-48 h-48 md:w-64 md:h-64 relative rounded-full overflow-hidden ring-4 ring-blue-500 dark:ring-blue-400 shadow-xl">
                 <Image
                   src={assetPath('/images/profile.png')}
@@ -21,6 +23,7 @@ export default function Home() {
                   priority
                 />
               </div>
+              <LogoStrip />
             </div>
 
             {/* Bio */}
@@ -81,17 +84,32 @@ export default function Home() {
               </div>
             </div>
           </div>
+          </FadeInSection>
+        </div>
+
+        {/* Subtle wavy divider */}
+        <div className="absolute bottom-0 left-0 right-0 h-6 overflow-hidden pointer-events-none">
+          <svg
+            viewBox="0 0 1200 120"
+            preserveAspectRatio="none"
+            className="absolute bottom-0 w-full h-6 fill-white dark:fill-gray-800"
+          >
+            <path d="M0,60 C300,120 600,0 900,60 C1050,90 1200,30 1200,60 L1200,120 L0,120 Z" />
+          </svg>
         </div>
       </section>
 
       {/* Featured Projects Section */}
       <section className="py-16 bg-white dark:bg-gray-800">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">
-            Featured Projects
-          </h2>
+          <FadeInSection>
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">
+              Featured Projects
+            </h2>
+          </FadeInSection>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <FadeInSection delay={0}>
             <ProjectCard
               title="Teaching Gemma to Think"
               description="Google Tunix Hackathon: Attempted to teach Gemma3-1B structured reasoning across creative writing, math, and science using a two-stage SFT + GRPO pipeline. Built a custom 2,282-sample distilled dataset from Gemini-2.5-Pro and trained on Kaggle's constrained TPU."
@@ -100,7 +118,9 @@ export default function Home() {
               isExternal={true}
               link="https://github.com/curiousgradient/teaching-gemma-to-think"
             />
+            </FadeInSection>
 
+            <FadeInSection delay={100}>
             <ProjectCard
               title="Key Actor Detection in Multi-Person Sports Videos"
               description="Research project published at CVsports Workshop, CVPR'22. Developed a convolutional recurrent neural network with attention mechanism to identify key players in hockey penalty videos without explicit annotations."
@@ -109,7 +129,9 @@ export default function Home() {
               isExternal={true}
               link="https://github.com/fay-askari72/Interaction-Classification-with-Key-Actor-Detection-in-Videos"
             />
+            </FadeInSection>
 
+            <FadeInSection delay={200}>
             <ProjectCard
               title="AI-Enabled Object Detection in UAVs"
               description="Research paper published in IEEE Networks. Developed an optimized deep learning architecture using ResNeSt backbone for aerial object detection, offloading computationally intensive tasks from power-constrained drones to GPU edge servers."
@@ -118,6 +140,7 @@ export default function Home() {
               isExternal={true}
               link="https://github.com/ayushjain1144/Aerial-Object-Detection"
             />
+            </FadeInSection>
           </div>
         </div>
       </section>
