@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import ViewTransitionLink from '@/components/ViewTransitionLink';
 import { getDeepDiveBySlug, getDeepDives } from '@/lib/markdown';
@@ -12,6 +13,16 @@ export async function generateStaticParams() {
 
 interface PageProps {
   params: Promise<{ slug: string }>;
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const dive = getDeepDiveBySlug(slug);
+  if (!dive) return {};
+  return {
+    title: `${dive.title} - Rohit Ramaprasad`,
+    description: dive.description,
+  };
 }
 
 export default async function DeepDivePage({ params }: PageProps) {

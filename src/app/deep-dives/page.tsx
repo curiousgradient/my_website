@@ -1,6 +1,12 @@
+import type { Metadata } from 'next';
 import ViewTransitionLink from '@/components/ViewTransitionLink';
 import TrackedExternalLink from '@/components/TrackedExternalLink';
 import { getDeepDives } from '@/lib/markdown';
+
+export const metadata: Metadata = {
+  title: 'Deep Dives - Rohit Ramaprasad',
+  description: 'Technical deep dives and learning notes on machine learning, computer vision, and AI concepts.',
+};
 
 export default function DeepDivesPage() {
   const deepDives = getDeepDives();
